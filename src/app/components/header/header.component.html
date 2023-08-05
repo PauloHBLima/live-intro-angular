@@ -1,0 +1,28 @@
+<header>
+    <h1>Projeto Teste</h1>
+    <nav>
+<ul>
+    <li *ngFor="let link of menus">
+        <a
+        [routerLink]="[link.rota]"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions]="{exact: true}">
+        {{link.texto}}
+    </a>
+    </li>
+</ul>
+    </nav>
+</header>
+
+
+
+<!--  <header>
+    <h1>Projeto Teste</h1>
+    <nav>
+<ul>
+    <li>
+        <a [routerlink]="['/']">Home</a>
+    </li>
+</ul>
+    </nav>
+</header> -->

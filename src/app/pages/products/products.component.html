@@ -1,0 +1,8 @@
+<app-page-title [pageTitle]="title"></app-page-title>
+
+<div><ul><li *ngFor="let bebida of bebidas">
+    <p>Nome: {{bebida.nome}} | Valor: R$ {{bebida.valor}}</p>
+    <a [routerLink]="['/products', bebida.id]">ver detalhes</a>
+</li>
+</ul>
+</div>
