@@ -1,4 +1,5 @@
 <div>
+<<<<<<< HEAD
     <h2>Cadastro de usuario</h2>
     <form #cadastroForm="ngForm">
         <div class="input_wrapper">
@@ -49,29 +50,100 @@
         </div>
 
          <div>
+=======
+    <h2 class="mt-40">Cadastro de usuário</h2>
+    <form #cadastroForm="ngForm">
+        <!-- ngForm com input Text -->
+        <div class="input__wrapper">
+            <label for="nome">Nome</label>
+            <input
+                type="text"
+                name="nome"
+                id="nome"
+                placeholder="digite o seu nome"
+                ngModel
+                autocomplete="off"
+            />
+        </div>
+
+        <div class="input__wrapper">
+            <label for="email">email</label>
+            <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="digite o seu email"
+                ngModel
+                autocomplete="off"
+            />
+        </div>
+
+        <!-- ngForm com input Radio -->
+        <div>
+            <label>Sexo</label>
+            <br />
+            <label for="masculino">M</label>
+            <input
+                type="radio"
+                name="sexo"
+                id="masculino"
+                value="masculino"
+                ngModel
+            />
+
+            <label for="feminino">F</label>
+            <input
+                type="radio"
+                name="sexo"
+                id="feminino"
+                value="feminino"
+                ngModel
+            />
+        </div>
+
+        <!-- ngForm com input Checkbox -->
+        <div>
+>>>>>>> ccaba1ef8dc8e213eca6cddef43a34e4cd4563a1
             <p>Selecione as tecnologias que você gosta de trabalhar</p>
             <div class="input__wrapper">
                 <label for="angular">Angular</label>
                 <input type="checkbox" name="angular" id="angular" ngModel />
             </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> ccaba1ef8dc8e213eca6cddef43a34e4cd4563a1
             <div class="input__wrapper">
                 <label for="react">React</label>
                 <input type="checkbox" name="react" id="react" ngModel />
             </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> ccaba1ef8dc8e213eca6cddef43a34e4cd4563a1
             <div class="input__wrapper">
                 <label for="vue">Vue</label>
                 <input type="checkbox" name="vue" id="vue" ngModel />
             </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> ccaba1ef8dc8e213eca6cddef43a34e4cd4563a1
             <div class="input__wrapper">
                 <label for="node">Node JS</label>
                 <input type="checkbox" name="node" id="node" ngModel />
             </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> ccaba1ef8dc8e213eca6cddef43a34e4cd4563a1
             <div class="input__wrapper">
                 <label for="java">Java</label>
                 <input type="checkbox" name="java" id="java" ngModel />
             </div>
         </div>
 
+<<<<<<< HEAD
 
 <!-- ng form com select mockado  -->
 <div>
@@ -102,3 +174,32 @@
 </div>
 <!-- //ng form com input text -->
 <!-- //#variavel de template -->
+=======
+        <!-- ngForm com select mockado -->
+        <div>
+            <h2>Lanches</h2>
+
+            <select name="comida" ngModel>
+                <option value disabled>Selecione um lanche</option>
+                <option value="x-salada">X-Salada</option>
+                <option value="x-hamburguer">X-Hamburger</option>
+                <option value="x-bacon">X-Bacon</option>
+                <option value="doguinho">doguinho</option>
+            </select>
+        </div>
+
+        <!-- ngForm com select simulação de dados da API -->
+        <div>
+            <h2>Bebidas</h2>
+            <select name="bebida" ngModel>
+                <option value disabled>Selecione uma bebida</option>
+                <option *ngFor="let bebida of bebidas" [ngValue]="bebida">
+                    {{ bebida.nome }}
+                </option>
+            </select>
+        </div>
+
+        <p>{{ cadastroForm.value | json }}</p>
+    </form>
+</div>
+>>>>>>> ccaba1ef8dc8e213eca6cddef43a34e4cd4563a1

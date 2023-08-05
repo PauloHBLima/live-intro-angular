@@ -9,10 +9,17 @@ import { ProductsComponent } from './pages/products/products.component';
 const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'teste', component: TesteComponent },
+<<<<<<< HEAD
     { path: 'products', component: ProductsComponent},
     { path: 'products/:id', component: ProductComponent},
     { path: 'not-found', component: NotFoundComponent},
     { path: '**', redirectTo: '/not-found'},
+=======
+    { path: 'products', component: ProductsComponent },
+    { path: 'products/:id', component: ProductComponent },
+    { path: 'not-found', component: NotFoundComponent },
+    { path: '**', redirectTo: '/not-found' },
+>>>>>>> ccaba1ef8dc8e213eca6cddef43a34e4cd4563a1
 ];
 
 @NgModule({
