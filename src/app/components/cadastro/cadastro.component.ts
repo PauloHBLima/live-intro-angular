@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { Component } from '@angular/core';
-=======
 import { Component, OnInit } from '@angular/core';
->>>>>>> ccaba1ef8dc8e213eca6cddef43a34e4cd4563a1
 
 interface Produto {
     nome: string;
@@ -10,20 +6,6 @@ interface Produto {
 }
 
 @Component({
-<<<<<<< HEAD
-  selector: 'app-cadastro',
-  templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.scss']
-})
-export class CadastroComponent {
-bebidas: Array<Produto> = [
-    {nome: 'Coca Cola 2l', valor: '10'},
-    {nome: 'Fanta', valor: '20'},
-    {nome: 'pepsi', valor: '30'},
-]
-}
-
-=======
     selector: 'app-cadastro',
     templateUrl: './cadastro.component.html',
     styleUrls: ['./cadastro.component.scss'],
@@ -48,4 +30,3 @@ export class CadastroComponent implements OnInit {
         }
     }
 }
->>>>>>> ccaba1ef8dc8e213eca6cddef43a34e4cd4563a1

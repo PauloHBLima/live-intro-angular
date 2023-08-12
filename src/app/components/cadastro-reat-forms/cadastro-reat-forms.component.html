@@ -1,56 +1,41 @@
 <div>
     <h2>Cadastro de usuario</h2>
-    <form #cadastroForm="ngForm">
+    <form [formGroup]="cadastroForm" (ngSubmit)="handleRegister()">
         <div class="input_wrapper">
             <label for="nome">Nome:</label>
-            <input
-            type="text"
-            name="nome"
-            id="nome"
-            placeholder="digite o seu nome"
-            ngModel
-            #nome="ngModel"
-            autocomplete="off"
-            >
+            <input type="text" id="nome" placeholder="digite o seu nome" autocomplete="off" formControlName="nome">
+        </div>
+        <div *ngIf="cadastroForm.get('nome')?.errors?.['required'] && cadastroForm.get('nome')?.touched">
+            <p class="error">Nome é Obrigatório</p>
         </div>
 
-        <div class="input_wrapper">
-            <label for="email">email:</label>
-            <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="digite o seu email"
-            ngModel
-            autocomplete="off"
-            >
+        <div *ngIf="cadastroForm.get('nome')?.errors?.['minlength'] && cadastroForm.get('nome')?.touched">
+            <p class="error">Nome tem que ter no min: {{ minLengthName }}caracteres </p>
         </div>
+        <!-- touched evento de blur -->
+        <div
+            class="input_wrapper">
+            <label for="email">email:</label>
+
+            <input type="email" id="email" placeholder="digite o seu email" formControlName="email" autocomplete="off">
+        </div>
+        <p class = "" *ngIf="cadastroForm.get('email')?.errors?.['required'] && cadastroForm.get('email')?.touched" class="error">email de exemplo: {{nameRequiredError}} </p>
+        <p class = "" *ngIf="cadastroForm.get('email')?.errors?.['pattern'] && cadastroForm.get('email')?.touched" class="error">email de exemplo: {{nameRequiredErrorMessage}} </p>
+
 
         <div class="">
             <label>Sexo</label>
             <br>
             <label for="masculino">M</label>
-            <input
-            type="radio"
-            name="sexo"
-            id="masculino"
-            value="masculino"
-            ngModel
-            >
+            <input type="radio" id="masculino" value="masculino" formControlName="sexo">
 
             <label for="feminino">F</label>
-            <input
-            type="radio"
-            name="sexo"
-            id="feminino"
-            ngModel
-            value="feminino"
-            >
+            <input type="radio" id="feminino" value="feminino" formControlName="sexo">
         </div>
 
-         <div>
+        <div>
             <p>Selecione as tecnologias que você gosta de trabalhar</p>
-            <div class="input__wrapper">
+            <!-- <div class="input__wrapper">
                 <label for="angular">Angular</label>
                 <input type="checkbox" name="angular" id="angular" ngModel />
             </div>
@@ -70,13 +55,13 @@
                 <label for="java">Java</label>
                 <input type="checkbox" name="java" id="java" ngModel />
             </div>
-        </div>
+        </div> -->
 
-        <!-- ngForm com select mockado -->
-        <div>
+            <!-- ngForm com select mockado
+        <div> -->
             <h2>Lanches</h2>
 
-            <select name="comida" ngModel>
+            <select name="comida" formControlName="comida">
                 <option value disabled>Selecione um lanche</option>
                 <option value="x-salada">X-Salada</option>
                 <option value="x-hamburguer">X-Hamburger</option>
@@ -88,14 +73,17 @@
         <!-- ngForm com select simulação de dados da API -->
         <div>
             <h2>Bebidas</h2>
-            <select name="bebida" ngModel>
+            <select name="bebida" formControlName="bebida">
                 <option value disabled>Selecione uma bebida</option>
                 <option *ngFor="let bebida of bebidas" [ngValue]="bebida">
                     {{ bebida.nome }}
                 </option>
             </select>
         </div>
+        <br><br><br>
+        <button type="submit" [disabled]="cadastroForm.invalid">cadastrar</button>
 
         <p>{{ cadastroForm.value | json }}</p>
+        <p> Formulario está valido ? {{cadastroForm.valid | json}} </p>
     </form>
 </div>
